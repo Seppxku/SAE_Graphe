@@ -12,10 +12,10 @@ public class Dijkstra<T> implements ShortestPath<T> {
 			throw new IllegalArgumentException("Le graphe, le sommet source et l'animateur ne doivent pas être null.");
 		}
 
-		Map<T, Integer> dist = new HashMap<>();
-		Map<T, T> pred = new HashMap<>();
-		Set<T> visited = new HashSet<>();
-		PriorityQueue<T> pq = new PriorityQueue<>(Comparator.comparingInt(dist::get));
+		Map<T, Integer> dist = new HashMap<>(); //distance actuelle la plus courte de src vers chaque sommet
+		Map<T, T> pred = new HashMap<>(); // stocke prédécesseur de chaque sommet dans le chemin le plus court
+		Set<T> visited = new HashSet<>(); // marque les sommets dont la distance est définitivement connue
+		PriorityQueue<T> pq = new PriorityQueue<>(Comparator.comparingInt(dist::get)); //priority queue pour choisir le sommet avec la plus petite distance pas encore visité.
 
 		// Initialisation avec la source
 		dist.put(src, 0);
