@@ -63,7 +63,6 @@ public interface ShortestPath<T> {
 	/**
 	 * Calcul des plus courts chemins.
 	 * 
-	 * @param <T>      Identifiant des sommets. Le type doit être "hachable".
 	 * @param g        Le graphe pour lequel le calcul est demandé.
 	 * @param src      Le sommet de {@code g} à partir duquel les plus courts chemins
 	 *                 sont demandés.
